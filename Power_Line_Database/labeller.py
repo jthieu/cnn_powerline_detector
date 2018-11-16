@@ -1,11 +1,12 @@
 import os
 import cv2
 import numpy as np
+from tqdm import tqdm
 
 from skimage import io
 
-dir_name = "/Users/jamesthieu23/Desktop/Power_Line_Database/Visible_Light_VL/"
-directory = os.fsencode("/Users/jamesthieu23/Desktop/Power_Line_Database/Visible_Light_VL")
+dir_name = "/Users/jamesthieu23/Documents/Classes/CS221/cs221_project/Power_Line_Database/Visible_Light_VL/"
+directory = os.fsencode("/Users/jamesthieu23/Documents/Classes/CS221/cs221_project/Power_Line_Database/Visible_Light_VL")
 
 labels = []
 
@@ -13,7 +14,7 @@ f = open("powerline_labels.txt","w+")
 
 stacked_images = None
 
-for file in os.listdir(directory):
+for file in tqdm(os.listdir(directory)):
     filename = os.fsdecode(file)
     if filename.endswith(".jpg"):
         image = io.imread(dir_name + filename, as_grey=True)
