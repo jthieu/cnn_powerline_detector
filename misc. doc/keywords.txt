@@ -1,0 +1,8 @@
+power lines
+detection
+hough
+convoluted
+neural network
+computer vision
+classification
+machine learning
